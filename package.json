@@ -5,7 +5,6 @@
   "main": "./src/computorV1.js",
   "dependencies": {
     "@types/node": "^12.12.21",
-    "nexe": "^3.3.2",
     "npm": "^6.13.4",
     "typescript": "^3.7.4"
   },

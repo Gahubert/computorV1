@@ -21,3 +21,19 @@ export function containChar(char: string, str: string) {
     }
     return false;
 }
+
+export function sqrt(nb: number) {
+    let root = 1;
+	let sqrt = 0;
+	while (root <= nb / 2) {
+		sqrt = root * root;
+		if (sqrt === nb) {
+			return (root);
+        }
+        else if (sqrt <= nb && ((root + 0.000001) * (root + 0.000001)) >= nb) {
+            return(root);
+        }
+		root = root + 0.000001;
+	}
+	return NaN;
+}

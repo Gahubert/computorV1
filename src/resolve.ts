@@ -1,4 +1,5 @@
 import { term } from "./term";
+import { sqrt } from "./lib";
 
 function _calculateDiscriminator(termTab: term[]){
     let a: number = 0;
@@ -37,16 +38,16 @@ function _calculateDiscriminator(termTab: term[]){
 export function resolveDegree2(termTab: term[]) {
     const result = _calculateDiscriminator(termTab);
     if (result.delta < 0) {
-        const highSol1 = `${-(result.b)} + i * ${Math.sqrt(-(result.delta))}`;
-        const highSol2 = `${-(result.b)} - i * ${Math.sqrt(-(result.delta))}`;
+        const highSol1 = `${-(result.b)} + i * ${sqrt(-(result.delta))}`;
+        const highSol2 = `${-(result.b)} - i * ${sqrt(-(result.delta))}`;
         const lowSol = (2 * result.a);
         console.log(`${highSol1} / ${lowSol}`);
         console.log(`${highSol2} / ${lowSol}`);
     }
     else if (result.delta > 0) {
-        const highSol1 = (-(result.b) + Math.sqrt(result.delta));
+        const highSol1 = (-(result.b) + sqrt(result.delta));
         const lowSol = (2 * result.a);
-        const highSol2 = (-(result.b) - Math.sqrt(result.delta));
+        const highSol2 = (-(result.b) - sqrt(result.delta));
         console.log(highSol1 / lowSol);
         console.log(highSol2 / lowSol);
     }
